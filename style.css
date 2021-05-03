@@ -6,7 +6,7 @@ nav {
     justify-content: space-between; 
     padding: 1.5rem 2rem;
     background-color: rgb(186, 94, 240);
-    transition: top 500ms ease-in-out;   
+    transition: top 400ms ease;   
 }
 
 nav.scroll-up {
@@ -15,4 +15,9 @@ nav.scroll-up {
 
 nav.scroll-down {
     top: -100%;
+}
+
+nav.scroll-up,
+nav:focus-within {
+    top: 0;
 }

@@ -18,7 +18,7 @@ const isScrollingDown = () => {
 const nav = document.querySelector('nav');
 
 const handleNavScroll = () => {
-    if (isScrollingDown()) {
+    if (isScrollingDown() && !nav.contains(document.activeElement)) {
         nav.classList.add('scroll-down');
         nav.classList.remove('scroll-up')
     } else {
@@ -46,4 +46,17 @@ const throttle = (callback, time) => {
 
 window.addEventListener("scroll", () => {
     throttle(handleNavScroll, 250)
+});
+
+
+
+
+
+
+const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+window.addEventListener("scroll", () => {
+    if (mediaQuery && !mediaQuery.matches) {
+        throttle(handleNavScroll, 250)
+    }
 });

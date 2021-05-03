@@ -27,3 +27,23 @@ const handleNavScroll = () => {
     }
 }
 
+
+
+
+var throttleWait;
+
+const throttle = (callback, time) => {
+    if (throttleWait) return;
+
+    throttleWait = true;
+
+    setTimeout(() => {
+        callback();
+
+        throttleWait = false;
+    }, time);
+}
+
+window.addEventListener("scroll", () => {
+    throttle(handleNavScroll, 250)
+});

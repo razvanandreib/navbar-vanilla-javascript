@@ -1,0 +1,18 @@
+nav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    padding: 1.5rem 2rem;
+    background-color: rgb(186, 94, 240);
+    transition: top 500ms ease-in-out;   
+}
+
+nav.scroll-up {
+    top: 0;
+}
+
+nav.scroll-down {
+    top: -100%;
+}
